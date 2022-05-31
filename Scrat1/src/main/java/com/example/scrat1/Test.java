@@ -166,11 +166,19 @@ public class Test {
 
         Scanner scanner = new Scanner(System.in);
         char[] letterArray = new char[7];
-
-        for (int a = 0; a < 7; a++) {
+        char letter = ' ';
+        char temp = ' ';
+        for (int a = 0; a < letterArray.length; a++) {
             System.out.println("Please enter a letter : ");
-            char letter = scanner.next().charAt(0);
-            letterArray[a] = letter;
+            letter = scanner.next().charAt(0);
+            if(letter != 'w' && letter != 'q' && letter != 'x' && letter != temp){
+                letterArray[a] = letter;
+                temp = letter;
+            }else{
+                System.out.println("Invalid letter!");
+                a--;
+            }
+
         }
 
         // Let the given dictionary be following
